@@ -746,6 +746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1182086873}
+  - component: {fileID: 1182086874}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -767,6 +768,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1182086874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182086872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162e391c4decc4c4ba171dd8316ad944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentName: 
+  currentScore: 0
+  bestName: 
+  bestScore: 0
 --- !u!1 &1215035798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +1020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342776069}
+  - component: {fileID: 1342776071}
   - component: {fileID: 1342776068}
   - component: {fileID: 1342776067}
   - component: {fileID: 1342776066}
@@ -1151,6 +1169,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1342776071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342776065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3490c8e69261b4f845dfd3c469bfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bestScoreText: {fileID: 1721326992}
+  nameField: {fileID: 1215035800}
 --- !u!1 &1393411319
 GameObject:
   m_ObjectHideFlags: 0

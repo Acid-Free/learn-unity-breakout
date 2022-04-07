@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public PlayerManager Instance;
+    public static PlayerManager Instance;
 
     public string currentName;
     public int currentScore;
@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     public string bestName;
     public int bestScore;
 
-    void Start()
+    void Awake()
     {
         if (Instance != null)
         {
@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         Instance = this;
+        DontDestroyOnLoad(gameObject);
 
         LoadBestData();
     }
