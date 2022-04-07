@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
+    public System.Action<int> onScoreUpdated;
 
     public Brick BrickPrefab;
     public int LineCount = 6;
@@ -22,17 +23,10 @@ public class MainManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
-    public void StartGame()
+    void Start()
     {
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
@@ -77,12 +71,21 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"Score : {m_Points}";
+        onScoreUpdated.Invoke(m_Points);
     }
 
     public void GameOver()
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        
+        PlayerManager.Instance.currentScore = m_Points;
+        if (m_Points >= PlayerManager.Instance.bestScore)
+        {
+            PlayerManager.Instance.bestName = PlayerManager.Instance.currentName;
+            PlayerManager.Instance.bestScore = m_Points;
+
+            PlayerManager.Instance.SaveBestData();
+        }
     }
 }

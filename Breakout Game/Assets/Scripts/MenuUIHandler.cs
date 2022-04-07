@@ -38,6 +38,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartGame()
     {
+        PlayerManager.Instance.currentName = nameField.text;
         SceneManager.LoadScene(1);
     }
 
