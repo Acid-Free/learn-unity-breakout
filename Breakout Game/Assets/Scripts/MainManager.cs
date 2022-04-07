@@ -52,7 +52,7 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
-        if (!m_Started && SceneManager.GetActiveScene().buildIndex == 1)
+        if (!m_Started)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
